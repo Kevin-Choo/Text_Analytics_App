@@ -1,5 +1,3 @@
-python3 -m spacy download en_core_web_sm
-
 # import dependencies
 import streamlit as st
 import pandas as pd
@@ -15,7 +13,8 @@ import nltk
 
 # for lemmatization
 import spacy
-import en_core_web_sm
+spacy.cli.download("en_core_web_sm")
+# import en_core_web_sm
 
 # create an nltk word tokenizer
 nltk_wt = nltk.word_tokenize
@@ -49,8 +48,8 @@ def download_text(raw_txt):
 
 
 # load spacy's English model
-# nlp = spacy.load('en_core_web_sm')
-nlp = en_core_web_sm.load()
+nlp = spacy.load('en_core_web_sm')
+# nlp = en_core_web_sm.load()
 # lemamtization using spaCy
 def spacy_lemmatize(text):
     text = nlp(text)
