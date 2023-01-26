@@ -1,4 +1,4 @@
-pip install spacy -q
+!python -m spacy download en_core_web_sm -q
 
 # import dependencies
 import streamlit as st
